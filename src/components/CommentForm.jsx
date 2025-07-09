@@ -11,10 +11,14 @@ export function CommentForm({ postId, parentCommentId }) {
     postId,
     parentCommentId,
   });
-  const boundDispatch = dispatch.bind({ postId, parentCommentId });
+  const boundDispatch = dispatch.bind({
+    postId,
+    parentCommentId,
+  });
   const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
+    console.log(state.success);
     if (state.success) {
       setOpen(false);
     }
